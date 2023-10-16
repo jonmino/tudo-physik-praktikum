@@ -1,0 +1,36 @@
+\section{Zielsetzung}\label{sec:ziel}
+
+\section{Theoretische Grundlagen}\label{sec:Theorie}
+\subsection{Berechnung der Messunsicherheiten}\label{ssec:Fehlerrechnung}
+Alle Mittelwerte einer $N$-fach gemessenen Größe $x$ werden über die Formel
+\begin{equation}
+    \overline{x} = \frac{1}{N} \sum_{i=1}^{N} x_\text{i} .
+    \label{eqn:mittel}
+\end{equation}
+berechnet. Der zugehörige Fehler des Messwertes berechnet sich dann über
+\begin{equation}
+    \symup{\Delta} \overline{x} = \sqrt{\frac{1}{N(N-1)} \sum_{i=1}^{N} {(x_\text{i}-\overline{x})}^2} .
+    \label{eqn:std}
+\end{equation}
+Setzt sich eine zu berechnende Größe aus mehreren mit Unsicherheit behafteten Messwerten zusammen, so ist die Unsicherheit dieser Größe über die Gaußsche Fehlerfortpflanzung gegeben
+\begin{equation}
+    \symup{\Delta} f(x_1, \ldots, x_\text{N}) = \sqrt{\sum_{i=1}^{N} \left[ {\left(\frac{\partial f}{\partial x_\text{i}}\right)}^2 \cdot {(\symup{\Delta} x_\text{i})}^2 \right] } .
+    \label{eqn:gaus}
+\end{equation}
+Ausgleichsgraden lassen sich wie folgt berechnen:
+\begin{subequations}
+    \begin{equation}
+        y = m \cdot x + b
+        \label{eqn:grade}
+    \end{equation}
+    \begin{equation}
+        m = \frac{\overline{xy} - \overline{x} \cdot \overline{y}}{\overline{x^2} - \overline{x}^2}
+        \label{eqn:steigung}
+    \end{equation}
+    \begin{equation}
+        b = \frac{\overline{x^2} \cdot \overline{y} - \overline{x} \cdot \overline{xy}}{\overline{x^2} - \overline{x}^2} .
+        \label{eqn:achsenab}
+    \end{equation}
+\end{subequations}
+Bei der Angabe des Endergebnisses werden schließlich alle statistischen Teilfehler addiert.
+Alle Berechnungen, Graphen sowie das Bestimmen der Unsicherheiten werden mit Python 3.8.8 und entsprechenden Bibliotheken\footnote{Numpy~\cite{numpy}, Uncertainties~\cite{uncertainties} and Matplotlib~\cite{matplotlib}} durchgeführt.

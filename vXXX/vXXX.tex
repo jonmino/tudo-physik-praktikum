@@ -1,0 +1,36 @@
+\input{header.tex}
+
+\newcommand{\vNummer}{XXX} %Einfaches Ändern der Nummer im gesamten Dokument
+\newcommand{\vTitel}{Testtitel} %%Einfaches Ändern des Titels im gesamten Dokument
+\subject{VERSUCH NUMMER \vNummer}
+\title{\vTitel}
+\date{%
+  Durchführung: DATUM
+  \hspace{3em}
+  Abgabe: DATUM
+}
+
+\begin{document}
+\pagenumbering{roman}
+\ohead{Irgendjemand\\
+  Someone}
+\ihead{V\vNummer\\
+  \vTitel}
+\ifoot{\headmark}
+\automark{section}
+\ofoot{Seite \pagemark}
+
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\input{content/theorie.tex}
+\input{content/durchfuehrung.tex}
+\input{content/auswertung.tex}
+\input{content/diskussion.tex}
+
+\printbibliography{}
+
+\end{document}
