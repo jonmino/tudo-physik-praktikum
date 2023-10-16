@@ -1,0 +1,17 @@
+name: prak
+
+channels:
+  - conda-forge
+  - anaconda
+
+dependencies:
+  - python
+  - numpy
+  - matplotlib
+  - scipy
+  - uncertainties
+  - ipython
+  - tqdm
+  - regex
+  - iminuit
+  - black

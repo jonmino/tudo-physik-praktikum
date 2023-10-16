@@ -1,0 +1,75 @@
+## Plot-style based on LHCb-style
+# based on the works of
+# Author: Kevin Dungs <kevin.dungs@cern.ch>
+# Date:   2014-02-19
+# and Maximilian Linhoff <@maxnoe>
+#
+# The following lines should be used in your python script:
+#   plt.xlabel(..., ha='right', x=1)
+#   plt.ylabel(..., ha='right', y=1)
+#   plt.legend(loc='best')
+#   plt.minorticks_on()
+#
+# In order to add a proper "LHCb Simulation" text box, use:
+#   plt.text(x, y, 'LHCb Simulation', {'size': 28})
+
+# pgf-Backend benutzen
+backend: pgf
+
+# Axes 
+axes.labelsize: 30
+axes.linewidth: 2
+
+# Patch
+patch.linewidth: 2
+
+# Größe der Zeichenfläche in Zoll
+figure.figsize: 11.56, 7.14
+figure.dpi:     200
+
+# Serifenfont benutzen
+font.family: serif
+font.size:   14
+font.weight: 400
+
+# Legend
+legend.frameon:       false
+legend.handletextpad: 0.3
+legend.numpoints:     1
+legend.labelspacing:  0.2
+legend.fontsize:      26
+legend.borderpad:     0.2
+
+# Lines
+lines.linewidth:       2
+lines.markeredgewidth: 2
+lines.markersize:      14
+
+# Save-Settings
+savefig.bbox:       tight
+savefig.pad_inches: 0.2
+
+# Ticks
+xtick.major.size:  12
+xtick.minor.size:  7
+xtick.major.width: 1.5
+xtick.minor.width: 1.5
+xtick.major.pad:   6
+xtick.minor.pad:   6
+xtick.labelsize:   26
+
+ytick.major.size:  12
+ytick.minor.size:  7
+ytick.major.width: 1.5
+ytick.minor.width: 1.5
+ytick.major.pad:  6
+ytick.minor.pad:  6
+ytick.labelsize:   26
+
+# unsere Fonteinstellungen benutzen
+pgf.rcfonts: False
+
+# TeX benutzen
+text.usetex: True
+pgf.texsystem: lualatex
+pgf.preamble: \input{header-matplotlib.tex}

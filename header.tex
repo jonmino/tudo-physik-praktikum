@@ -1,0 +1,162 @@
+\documentclass[
+  bibliography=totoc,     % Literatur im Inhaltsverzeichnis
+  captions=tableheading,  % Tabellenüberschriften
+  titlepage=firstiscover, % Titelseite ist Deckblatt
+]{scrartcl}
+
+% Paket float verbessern
+\usepackage{scrhack}
+
+% Warnung, falls nochmal kompiliert werden muss
+\usepackage[aux]{rerunfilecheck}
+
+% unverzichtbare Mathe-Befehle
+\usepackage{amsmath}
+% viele Mathe-Symbole
+\usepackage{amssymb}
+% Erweiterungen für amsmath
+\usepackage{mathtools}
+
+% Fonteinstellungen
+\usepackage{fontspec}
+
+% deutsche Spracheinstellungen
+\usepackage[ngerman]{babel}
+
+\usepackage[
+  math-style=ISO,    % ┐
+  bold-style=ISO,    % │
+  sans-style=italic, % │ ISO-Standard folgen
+  nabla=upright,     % │
+  partial=upright,   % ┘
+  warnings-off={             % ┐
+      mathtools-colon,       % │ unnötige Warnungen ausschalten
+      mathtools-overbracket, % │
+    },                       % ┘
+]{unicode-math}
+
+% Zahlen und Einheiten
+\usepackage[
+  locale=DE,                   % deutsche Einstellungen
+  separate-uncertainty=true,   % immer Unsicherheit mit \pm
+  per-mode=symbol-or-fraction, % / in inline math, fraction in display math
+  table-align-uncertainty=true,% richtige Ausrichtung bei Tabellen
+  table-align-exponent=true,   % Ausrichtung des Exponenten
+  round-mode=figures,      % Werte mit Unsicherheit (u) runden, diese auf round-precision, options: uncertainty, none, places, figures
+  round-precision=2,           % auf zwei Stellen
+  tight-spacing=true,     % Abstand zwischen Zahl und Einheit
+  table-alignment-mode=format, % Use text-format as Space
+]{siunitx}
+\DeclareSIUnit\bar{bar}
+
+% chemische Formeln
+\usepackage[
+  version=4,
+  math-greek=default, % ┐ mit unicode-math zusammenarbeiten
+  text-greek=default, % ┘
+]{mhchem}
+
+%Font Definition
+%\setmathfont{Libertinus Math}
+%\setromanfont{Libertinus Serif}
+%\setsansfont{Libertinus Sans}
+%\setmonofont{Libertinus Mono}
+
+% LaTeX
+\usepackage{FiraSans}
+% \setmainfont{STIX Two Text}
+% \setmathfont{XITS Math}
+\setmainfont{FiraSans Regular}[
+  Scale=MatchLowercase,
+  BoldFont=FiraSans SemiBold,
+]
+\setsansfont{FiraSans Light}[
+  Scale=MatchLowercase,
+  BoldFont=FiraSans Medium,
+]
+\setmonofont{Fira Mono}[Scale=MatchLowercase]
+\setmathfont{Fira Math}[Scale=MatchLowercase]
+%\setmathfont{STIX Two Math}
+
+% Wenn man andere Schriftarten gesetzt hat,
+% sollte man das Seiten-Layout neu berechnen lassen
+\recalctypearea{}
+
+% richtige Anführungszeichen
+\usepackage[autostyle]{csquotes}
+
+% schöne Brüche im Text
+\usepackage{xfrac}
+
+% Standardplatzierung für Floats einstellen
+\usepackage{float}
+\floatplacement{figure}{htbp}
+\floatplacement{table}{htbp}
+
+% Floats innerhalb einer Section halten
+\usepackage[
+  section, % Floats innerhalb der Section halten
+  below,   % unterhalb der Section aber auf der selben Seite ist ok
+]{placeins}
+
+% Seite drehen für breite Tabellen: landscape Umgebung
+\usepackage{pdflscape}
+
+% Captions schöner machen.
+\usepackage[
+  labelfont=bf,        % Tabelle x: Abbildung y: ist jetzt fett
+  font=small,          % Schrift etwas kleiner als Dokument
+  width=0.9\textwidth, % maximale Breite einer Caption schmaler
+]{caption}
+% subfigure, subtable, subref
+\usepackage{subcaption}
+
+% Grafiken können eingebunden werden
+\usepackage{graphicx}
+\usepackage{wrapfig}%Textumflossene Graphik
+\usepackage{cancel} %Brüche Kürzen
+\usepackage{tikz} %Fancy Kreisnummern
+\usepackage[a4paper, left=25mm, top=25mm, right=25mm, bottom=25mm]{geometry} %Pagelayout
+\usepackage{subcaption} %Unterüberschrift
+\captionsetup[figure]{calcwidth=.85\linewidth} %You dont want to know
+\usepackage{longtable}
+
+% schöne Tabellen
+\usepackage{booktabs}
+
+% Verbesserungen am Schriftbild
+\usepackage{microtype}
+
+% Literaturverzeichnis
+\usepackage[backend=biber,style=numeric,sorting=none,backrefstyle=two]{biblatex}
+% Quellendatenbank
+\addbibresource{lit.bib}
+\addbibresource{programme.bib}
+
+% Hyperlinks im Dokument
+\usepackage[
+  german,
+  unicode,        % Unicode in PDF-Attributen erlauben
+  pdfusetitle,    % Titel, Autoren und Datum als PDF-Attribute
+  pdfcreator={},  % ┐ PDF-Attribute säubern
+  pdfproducer={}, % ┘
+]{hyperref}
+% erweiterte Bookmarks im PDF
+\usepackage{bookmark}
+
+% Trennung von Wörtern mit Strichen
+\usepackage[shortcuts]{extdash}
+
+\usepackage[headsepline=1pt,footsepline=1pt]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\author{%
+  Irgendjemand\\%
+  \href{mailto:irgend.jemand@tu-dortmund.de}{irgend.jemand@tu-dortmund.de}%
+  \and%
+  Someone\\%
+  \href{mailto:some.one@tu-dortmund.de}{some.one@tu-dortmund.de}%
+}
+\publishers{TU Dortmund – Fakultät Physik}
+\setlength\parindent{0pt}
