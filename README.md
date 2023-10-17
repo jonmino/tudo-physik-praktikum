@@ -1,14 +1,14 @@
 # tudo-physik-praktikum
 
 Dieses Repository bietet eine Grundlage für das Praktikum der Fakultät Physik an der TU Dortmund.
-Es enthält ein Template/Beispiel wie ein solches Protokoll erstellt werden kann, eine Liste an nützlichen Programmen, welche als Conda Environment installiert werden können (prak.yml). Außerdem werden diverse Altprotokolle bereitgestellt.
-Alle in den Protokollen verlinkten Quellen sind in programme.bib und lit.bit zu finden.
+Es enthält ein Template/Beispiel (`vXXX`) wie ein solches Protokoll erstellt werden kann, eine Liste an nützlichen Programmen, welche als Conda Environment installiert werden können (`prak.yml`). Außerdem werden diverse Altprotokolle bereitgestellt.
+Alle in den Protokollen verlinkten Quellen sind in `programme.bib` und `lit.bit` zu finden.
 Die globale Makefile bietet folgende Befehle:
 
-- make vXXX -> Versuch XXX bauen
-- make cXXX -> build Verzeichnis von Versuch XXX löschen
-- make all -> Alle Versuche bauen
-- make clean -> Alle build Ordner löschen
+- `make vXXX` -> Versuch XXX bauen
+- `make cXXX` -> build Verzeichnis von Versuch XXX löschen
+- `make all` -> Alle Versuche bauen
+- `make clean` -> Alle build Ordner löschen
 
 ## Empfehlungen
 
